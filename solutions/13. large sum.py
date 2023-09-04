@@ -104,3 +104,11 @@ numbersList = [
     20849603980134001723930671666823555245252804609722,
     53503534226472524250874054075591789781264330331690,
 ]
+
+
+def get_first_10d_of_sum():
+    sum_str = str(sum(numbersList))
+    return sum_str[:10]
+
+
+print(get_first_10d_of_sum())
