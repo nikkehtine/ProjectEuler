@@ -3,9 +3,8 @@
 
 
 def is_palindrome(input):
-    reversed = ""
-    for i in range(len(input)):
-        reversed += input[-i - 1]
-    return True if reversed == input else False
-    # This could be optimized as you can just check two halves of the input
-    # (rounded upwards if odd length)
+    half_1, half_2 = "", ""
+    for i in range(round(len(input) / 2)):
+        half_1 += input[i]
+        half_2 += input[-i - 1]
+    return True if half_1 == half_2 else False
