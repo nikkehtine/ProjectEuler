@@ -20,11 +20,4 @@ def gen_palindromes():
     return palindromes
 
 
-def largest_palindrome():
-    largest = 0
-    for i in gen_palindromes():
-        largest = i if i > largest else largest
-    return largest
-
-
-print(largest_palindrome())
+print(max(gen_palindromes()))
