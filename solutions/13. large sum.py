@@ -2,7 +2,7 @@
 # https://projecteuler.net/problem=13
 
 
-numbersList = [
+numbers_list = [
     37107287533902102798797998220837590246510135740250,
     46376937677490009712648124896970078050417018260538,
     74324986199524741059474233309513058123726617309629,
@@ -106,9 +106,5 @@ numbersList = [
 ]
 
 
-def get_first_10d_of_sum():
-    sum_str = str(sum(numbersList))
-    return sum_str[:10]
-
-
-print(get_first_10d_of_sum())
+sum_str = str(sum(numbers_list))
+print(sum_str[:10])
