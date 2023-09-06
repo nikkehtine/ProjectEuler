@@ -1,5 +1,6 @@
 # ProjectEuler
-My solutions to Project Euler problems in Python
+
+My solutions to Project Euler problems in various languages, such as Python, Julia, etc.
 
 Please don't copy my solutions, think about them all by yourself!
 
