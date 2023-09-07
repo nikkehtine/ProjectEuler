@@ -2,29 +2,29 @@
 # https://projecteuler.net/problem=3
 
 target = 600851475143
+primes = [2]
 
-# This solution is so painfully slow that I don't even know if it works
-# or what the output is.
+"This function uses the algorithm of the 'sieve of Erastothenes'"
+function sieve(num)
+    √ = floor(Int, sqrt(num))
+    sieve = fill(true, num)  # The sieve requires all values initially set to true
+    sieve[1] = false         # Except one, which is not a prime
 
-function isPrime(num)
-    if num == 0 || num == 1
-        return false
-    end
-    for i = 2:sqrt(num)
-        if num % i == 0
-            return false
+    for i = 2:√
+        if sieve[i]
+            for j = 2:num
+                if i * j <= num
+                    sieve[i*j] = false
+                end
+            end
         end
     end
-    return true
+
+    return sieve
 end
 
-function largestPrimeFactor(num)::Int
-    for i in reverse(sqrt(num):num)
-        if num % i == 0 && isPrime(i)
-            return i
-        end
-    end
-    return 0
-end
+println(sieve(10))
+
+function largestPrimeFactor(number) end
 
 println(largestPrimeFactor(target))
