@@ -2,7 +2,6 @@
 # https://projecteuler.net/problem=3
 
 target = 600851475143
-primes = [2]
 
 "This function uses the algorithm of the 'sieve of Erastothenes'"
 function sieve(num)
@@ -20,10 +19,16 @@ function sieve(num)
         end
     end
 
-    return sieve
+    primes = []
+    for i = 1:num
+        if sieve[i]
+            push!(primes, i)
+        end
+    end
+    return primes
 end
 
-println(sieve(10))
+println(sieve(100))
 
 function largestPrimeFactor(number) end
 
