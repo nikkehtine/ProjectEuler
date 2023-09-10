@@ -1,10 +1,8 @@
 // Largest prime factor
 // https://projecteuler.net/problem=3
 
-bigNum = 600851475143;
-
 function isPrime(n) {
-    if (n % 2 == 0 || n == 0 || n == 1) {
+    if ((n % 2 == 0 && n != 2) || n == 0 || n == 1) {
         return false;
     }
     for (let i = 3; i <= Math.sqrt(n); i += 2) {
@@ -19,20 +17,19 @@ function largestPrimeFactor(number) {
     if (number == 0 || number == 1) {
         return "n/a";
     }
-    const primes = [2];
-    for (let i = 3; i <= number; i++) {
+    const primeFactors = [];
+    for (let i = 0; i <= Math.sqrt(number); i++) {
+        if (number % i != 0) {
+            continue;
+        }
         if (isPrime(i)) {
-            primes.push(i);
+            primeFactors.push(i);
+        }
+        if (isPrime(number / i)) {
+            primeFactors.push(number / i);
         }
     }
-    const facs = [];
-    for (let i = 0; i < primes.length; i++) {
-        if (number % primes[i] == 0) {
-            facs.push(primes[i]);
-        }
-    }
-    const end = facs.length - 1;
-    return facs[end];
+    return primeFactors.at(-1);
 }
 
-console.log(largestPrimeFactor(bigNum));
+console.log(largestPrimeFactor(600851475143));
