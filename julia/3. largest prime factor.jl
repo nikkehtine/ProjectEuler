@@ -1,53 +1,38 @@
 # Largest prime factor
 # https://projecteuler.net/problem=3
 
-target = 600851475143
+function is_prime(n)
+    if n != 2 && n % 2 == 0 || n == 0 || n == 1
+        return false
+    end
+    for i in 3:2:sqrt(n)
+        if n % i == 0
+            return false
+        end
+    end
+    return true
+end
 
-"This function uses the algorithm of the 'sieve of Erastothenes'"
-function sieve(num)
-    √ = floor(Int, sqrt(num))
-    sieve = fill(true, num)  # The sieve requires all values initially set to true
-    sieve[1] = false         # Except one, which is not a prime
-    for i = 2:√
-        if !sieve[i]
+function largest_prime_factor(number)
+    if number == 0 || number == 1
+        return "n/a"
+    end
+    if is_prime(number)
+        return number
+    end
+    prime_factors = []
+    for i in 2:floor(sqrt(number))
+        if number % i != 0
             continue
         end
-        for j = 2:num
-            if i * j <= num
-                sieve[i*j] = false
-            end
+        if is_prime(i)
+            push!(prime_factors, floor(Int, i))
+        end
+        if is_prime(number / i)
+            push!(prime_factors, floor(Int, number / i))
         end
     end
-
-    primes = []
-    for i = 1:num
-        if sieve[i]
-            push!(primes, i)
-        end
-    end
-    return primes
+    return maximum(prime_factors)
 end
 
-function factors(num)
-    fa = []
-    for i = 1:num
-        if num % i == 0
-            push!(fa, i)
-        end
-    end
-    return fa
-end
-
-function largestPrimeFactor(number)
-    primeFactors = []
-    for i in sieve(number)
-        for j in factors(number)
-            if i == j
-                push!(primeFactors, i)
-            end
-        end
-    end
-    return primeFactors[end]
-end
-
-println(largestPrimeFactor(6969))
+println(largest_prime_factor(600851475143))
