@@ -14,11 +14,14 @@ function isPrime(n) {
 }
 
 function largestPrimeFactor(number) {
-    if (number == 0 || number == 1) {
+    if (number == 0 || number == 1 || number != Math.floor(number)) {
         return "n/a";
     }
+    if (isPrime(number)) {
+        return number;
+    }
     const primeFactors = [];
-    for (let i = 0; i <= Math.sqrt(number); i++) {
+    for (let i = 2; i <= Math.sqrt(number); i++) {
         if (number % i != 0) {
             continue;
         }
@@ -29,6 +32,7 @@ function largestPrimeFactor(number) {
             primeFactors.push(number / i);
         }
     }
+    primeFactors.sort((a, b) => a - b);
     return primeFactors.at(-1);
 }
 
