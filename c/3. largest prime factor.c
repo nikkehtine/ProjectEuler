@@ -14,7 +14,8 @@ bool isPrime(long n) {
     } else if (n == 2) {
         return true;
     }
-    for (int i = 3; i <= sqrt(n); i += 2) {
+    const long long root = sqrt(n);
+    for (int i = 3; i <= root; i += 2) {
         if (n % i == 0) {
             return false;
         }
@@ -29,9 +30,10 @@ long long largestPrimeFactor(long long number) {
     if (isPrime(number)) {
         return number;
     }
+    const long long root = sqrt(number);
     long long primeFactors[1024];
     long index = 0;
-    for (int i = 2; i <= sqrt(number); i++) {
+    for (int i = 2; i <= root; i++) {
         if (number % i != 0) {
             continue;
         }
