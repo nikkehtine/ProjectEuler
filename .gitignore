@@ -1,6 +1,10 @@
 # Ignore VS Code configs
 .vscode
 
+# Ignore system files
+[Dd]esktop.ini
+.DS_Store
+
 ###* Python
 
 # Byte-compiled / optimized / DLL files
