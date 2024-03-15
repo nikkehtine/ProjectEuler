@@ -1,4 +1,8 @@
-#ifndef ISPRIME
-#define ISPRIME
+#include <stdbool.h>
+
+#ifndef PRIME_H
+#define PRIME_H
+
 bool isPrime(int n);
+
 #endif
