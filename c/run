@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$1" = "cleanup" ]; then
+    rm -rf out
+    exit 0
+fi
+
+mkdir -p out
+
+for file in *.c; do
+    filename=$(basename -- "$file")
+    filename_no_ext="${filename%.*}"
+    gcc "$file" -o "out/$filename_no_ext" && ./out/"$filename_no_ext"
+done
