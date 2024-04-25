@@ -21,8 +21,8 @@ Please don't ban my account, I'm not spoiling solutions to problems! I'm just tr
 
 `#2 (Julia): Add solution`
 
--   `#2` - problem number
-    -   `#2, #3` - commit can affect multiple problems
+-   `2` - problem number
+    -   `2, 3` - commit can affect multiple problems
 -   `(Julia)` - the implementation language
     -   `(C, Python)` - commit can affect multiple implementations
 -   `Add solution` - summary of the changes
