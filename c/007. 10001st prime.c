@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-long long nthPrime(int target) {
+long long nth_prime(int target) {
     int n;
     for (int i = 1; n < target; i++) {
         if (!isPrime(i)) {
@@ -19,7 +19,7 @@ long long nthPrime(int target) {
 }
 
 int main(void) {
-    long long prime_number = nthPrime(10001);
+    long long prime_number = nth_prime(10001);
     printf("%d\n", prime_number);
     return 0;
 }

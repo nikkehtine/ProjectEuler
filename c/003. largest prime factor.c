@@ -9,11 +9,11 @@
 
 const long long big_int = 600851475143;
 
-long long largestPrimeFactor(long long number) {
+long long largest_prime_factor(long long number) {
     if (number == 0 || number == 1) {
         return 0;
     }
-    if (isPrime(number)) {
+    if (is_prime(number)) {
         return number;
     }
     const long long root = sqrt(number);
@@ -23,11 +23,11 @@ long long largestPrimeFactor(long long number) {
         if (number % i != 0) {
             continue;
         }
-        if (isPrime(i)) {
+        if (is_prime(i)) {
             primeFactors[index] = i;
             index++;
         }
-        if (isPrime(number / i)) {
+        if (is_prime(number / i)) {
             primeFactors[index] = number / i;
             index++;
         }
@@ -42,7 +42,7 @@ long long largestPrimeFactor(long long number) {
 }
 
 int main(void) {
-    long long lpm = largestPrimeFactor(big_int);
+    long long lpm = largest_prime_factor(big_int);
     printf("%lld\n", lpm);
     return 0;
 }
