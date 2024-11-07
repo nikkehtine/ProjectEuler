@@ -11,11 +11,11 @@ My main goal is to learn mathematics and test out programming languages
 
 ## Running solutions
 
+-   **C**: `./run_c <FILE>`
+-   **Go**: `go run <FILE>`
+-   **JavaScript**: `node <FILE>`
 -   **Julia, Python, Ruby**: name of the language + the file you want to run,
-    i.e. `python3 "<FILE>"`
--   **JavaScript**: `node "<FILE>"`
--   **Go**: `go run "<FILE>"`
--   **C**: `./run_c "<FILE>"`
+    i.e. `python3 <FILE>`
 
 ## Commit message pattern
 

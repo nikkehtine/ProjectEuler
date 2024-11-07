@@ -17,11 +17,10 @@ long long nthPrime(int target) {
         if (n == target)
             return i;
     }
-    return 0;
 }
 
 int main(void) {
     long long prime_number = nthPrime(10001);
-    printf("%lld\n", prime_number);
+    printf("%d\n", prime_number);
     return 0;
 }

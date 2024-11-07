@@ -1,0 +1,42 @@
+#!/bin/sh
+
+set -e
+
+CC=clang
+CFLAGS="-Wall -Wextra"
+LIBS="-lm"
+
+parent_dir=$(dirname "$1")
+filename=$(basename "$1")
+filename_base="${filename%.*}"
+out_file="$parent_dir/out/$filename_base"
+
+if [ "$#" = 0 ]; then
+  echo "No input file provided"
+  echo "Usage: $0 <input_file>"
+  exit 1
+fi
+
+if [ "$1" = "clean" ]; then
+  outdirs="$parent_dir $parent_dir/c"
+
+  nothing=true
+  for dir in $outdirs; do
+    if [ -e "$dir/out" ]; then
+      nothing=false
+      echo "Running rm -rf $dir/out"
+      rm -rf "$dir/out"
+    fi
+  done
+  if $nothing; then
+    echo "Nothing to clean"
+  fi
+
+  exit 0
+fi
+
+mkdir -p "$parent_dir/out"
+LIBS="$LIBS $parent_dir/lib/*.c"
+$CC $CFLAGS -o "$out_file" "$1" $LIBS
+printf "\n"
+"./$out_file"
