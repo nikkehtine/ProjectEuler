@@ -23,6 +23,7 @@ if [ "$1" = "cleanup" ]; then
 fi
 
 mkdir -p "$parent_dir/out"
-$CC "$CFLAGS" -o "$out_file" "$1" "$LIBS"
+LIBS="$LIBS $parent_dir/lib/*.c"
+$CC $CFLAGS -o "$out_file" "$1" $LIBS
 echo "===================="
 "./$out_file"
