@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+CC=clang
+CFLAGS="-Wall -Wextra"
+LIBS="-lm"
+
+if [ "$#" = 0 ]; then
+    echo "No input file provided"
+    echo "Usage: $0 <input_file>"
+    exit 1
+fi
+
+parent_dir=$(dirname "$1")
+filename=$(basename "$1")
+filename_no_ext="${filename%.*}"
+out_file="$parent_dir/out/$filename_no_ext"
+
+if [ "$1" = "cleanup" ]; then
+    rm -rf "$parent_dir/out"
+    exit 0
+fi
+
+mkdir -p "$parent_dir/out"
+$CC "$CFLAGS" -o "$out_file" "$1" "$LIBS"
+echo "===================="
+"./$out_file"

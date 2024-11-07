@@ -2,20 +2,20 @@
 
 My solutions to Project Euler problems in various languages, such as Python, Julia, etc.
 
+My main goal is to learn mathematics and test out programming languages
+
 ## Disclaimer
 
-Please don't copy my solutions, think about them all by yourself!
-
-Please don't ban my account, I'm not spoiling solutions to problems! I'm just trying to improve on mathematics and programming and want to document my journey.
+> [!WARNING]
+> Don't copy my solutions, write them all out yourself
 
 ## Running solutions
 
-### Interpreted
-
--   **Julia, Python, Ruby**: name of the language + the file you want to run
--   **JavaScript**: `node <FILE>`
--   **Go**: `go run <FILE>`
--   **C**: `./run <FILE>` in the `c` folder
+-   **Julia, Python, Ruby**: name of the language + the file you want to run,
+    i.e. `python3 "<FILE>"`
+-   **JavaScript**: `node "<FILE>"`
+-   **Go**: `go run "<FILE>"`
+-   **C**: `./run_c "<FILE>"`
 
 ## Commit message pattern
 
@@ -25,6 +25,5 @@ Please don't ban my account, I'm not spoiling solutions to problems! I'm just tr
     -   `2, 3` - commit can affect multiple problems
 -   `(Julia)` - the implementation language
     -   `(C, Python)` - commit can affect multiple implementations
+    -   `(General)` - for general changes
 -   `Add solution` - summary of the changes
-
-Alternatively, the commit message can ignore this pattern for general changes
