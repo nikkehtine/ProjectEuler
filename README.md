@@ -4,14 +4,12 @@ My solutions to Project Euler problems in various languages, such as Python, Jul
 
 My main goal is to learn mathematics and test out programming languages
 
-## Disclaimer
-
 > [!WARNING]
 > Don't copy my solutions, write them all out yourself
 
 ## Running solutions
 
--   **C**: `./run_c <FILE>`
+-   **C**: `cd c && ./run <FILE>` or `./c/run c/<FILE>`
 -   **Go**: `go run <FILE>`
 -   **JavaScript**: `node <FILE>`
 -   **Julia, Python, Ruby**: name of the language + the file you want to run,
